@@ -3,7 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lanang F Ramadhan</title>
+    <title>Lanang Fajri Ramadhan | Web Developer &amp; Mahasiswa Informatika UAD</title>
+    <meta name="description" content="Portofolio Lanang Fajri Ramadhan (Fazza), Web Developer dan mahasiswa Informatika Universitas Ahmad Dahlan Yogyakarta. Berpengalaman dengan Laravel, Django, PHP, Python, dan JavaScript." />
+    <meta name="author" content="Lanang Fajri Ramadhan" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://fazzaaja.github.io/lanang-fazza/" />
+
+    <!-- Pratinjau saat link dibagikan (WhatsApp, LinkedIn, Facebook, X) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Lanang Fajri Ramadhan" />
+    <meta property="og:title" content="Lanang Fajri Ramadhan | Web Developer" />
+    <meta property="og:description" content="Portofolio Lanang Fajri Ramadhan (Fazza), Web Developer dan mahasiswa Informatika Universitas Ahmad Dahlan Yogyakarta. Berpengalaman dengan Laravel, Django, PHP, Python, dan JavaScript." />
+    <meta property="og:url" content="https://fazzaaja.github.io/lanang-fazza/" />
+    <meta property="og:image" content="https://fazzaaja.github.io/lanang-fazza/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lanang Fajri Ramadhan, Web Developer" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="profile:first_name" content="Lanang Fajri" />
+    <meta property="profile:last_name" content="Ramadhan" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lanang Fajri Ramadhan | Web Developer" />
+    <meta name="twitter:description" content="Portofolio Lanang Fajri Ramadhan (Fazza), Web Developer dan mahasiswa Informatika Universitas Ahmad Dahlan Yogyakarta. Berpengalaman dengan Laravel, Django, PHP, Python, dan JavaScript." />
+    <meta name="twitter:image" content="https://fazzaaja.github.io/lanang-fazza/og-image.png" />
+
+    <!-- Data terstruktur agar Google mengenali profil ini sebagai orang -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lanang Fajri Ramadhan",
+        "alternateName": "Fazza",
+        "url": "https://fazzaaja.github.io/lanang-fazza/",
+        "image": "https://fazzaaja.github.io/lanang-fazza/og-image.png",
+        "jobTitle": "Web Developer",
+        "email": "mailto:lanangfajri@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yogyakarta",
+          "addressCountry": "ID"
+        },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Universitas Ahmad Dahlan" },
+          { "@type": "HighSchool", "name": "SMK Negeri 4 Tasikmalaya" }
+        ],
+        "knowsAbout": ["Web Development", "Laravel", "Django", "PHP", "Python", "JavaScript", "SQL", "UI/UX Design"],
+        "sameAs": [
+          "https://github.com/FazzaAja",
+          "https://www.linkedin.com/in/fazza-aja/",
+          "https://www.instagram.com/be_fazza/",
+          "https://www.tiktok.com/@kayaknyafazza"
+        ]
+      }
+    </script>
+
+    <!-- Favicon: monogram LF emas -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#0a0a0a" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap"
@@ -190,7 +249,7 @@
         border: 6px solid var(--color-bg-base);
       }
 
-      .profile-sidebar h2 {
+      .profile-sidebar h1 {
         font-size: 32px;
         margin-bottom: 8px;
         font-weight: 700;
@@ -993,13 +1052,16 @@
       <aside class="profile-sidebar glass-panel">
         <div class="profile-img-container">
           <img
-            src="person.webp"
-            alt="Lanang Fajri Ramadhan"
+            src="person-440.webp"
+            alt="Foto Lanang Fajri Ramadhan"
             class="profile-img"
+            width="440"
+            height="440"
+            fetchpriority="high"
           />
         </div>
 
-        <h2>Lanang F Ramadhan</h2>
+        <h1>Lanang F Ramadhan</h1>
 
         <div class="job-title-container">
           <span class="typing-text"></span><span class="cursor"></span>
@@ -1009,18 +1071,24 @@
           <a
             href="https://www.instagram.com/be_fazza/"
             target="_blank"
+            rel="noopener me"
+            aria-label="Instagram Lanang Fajri Ramadhan"
             class="social-btn"
             ><i class="fa-brands fa-instagram"></i
           ></a>
           <a
             href="https://www.tiktok.com/@kayaknyafazza"
             target="_blank"
+            rel="noopener me"
+            aria-label="TikTok Lanang Fajri Ramadhan"
             class="social-btn"
             ><i class="fa-brands fa-tiktok"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/fazza-aja/"
             target="_blank"
+            rel="noopener me"
+            aria-label="LinkedIn Lanang Fajri Ramadhan"
             class="social-btn"
             ><i class="fa-brands fa-linkedin-in"></i
           ></a>
@@ -1332,7 +1400,9 @@
             >
               <div class="portfolio-img-wrapper">
                 <img
-                  src="images/works/kusuma-dental-care.png"
+                  src="images/works/kusuma-dental-care.webp"
+                  width="900"
+                  height="444"
                   alt="Kusuma Dental Care"
                   class="portfolio-img"
                   loading="lazy"
@@ -1356,7 +1426,9 @@
             >
               <div class="portfolio-img-wrapper">
                 <img
-                  src="images/works/griskanutri.png"
+                  src="images/works/griskanutri.webp"
+                  width="479"
+                  height="437"
                   alt="Griskanutri"
                   class="portfolio-img"
                   loading="lazy"
@@ -1380,7 +1452,9 @@
             >
               <div class="portfolio-img-wrapper">
                 <img
-                  src="images/works/sortir-double.png"
+                  src="images/works/sortir-double.webp"
+                  width="600"
+                  height="317"
                   alt="Sistem Sortir Double Antarestar"
                   class="portfolio-img"
                   loading="lazy"
@@ -1404,7 +1478,9 @@
             >
               <div class="portfolio-img-wrapper">
                 <img
-                  src="images/works/company-card-profile.png"
+                  src="images/works/company-card-profile.webp"
+                  width="600"
+                  height="317"
                   alt="Company Profile Antarestar"
                   class="portfolio-img"
                   loading="lazy"
@@ -1428,7 +1504,9 @@
             >
               <div class="portfolio-img-wrapper">
                 <img
-                  src="images/works/izin-smkn4.png"
+                  src="images/works/izin-smkn4.webp"
+                  width="600"
+                  height="317"
                   alt="Sistem Izin SMKN 4 TSM"
                   class="portfolio-img"
                   loading="lazy"
@@ -1469,7 +1547,7 @@
         <button class="close-modal" onclick="closeModal()">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <img src="" alt="Project" id="modal-img" class="modal-img" />
+        <img src="" alt="" id="modal-img" class="modal-img" />
         <h3 id="modal-title" style="font-size: 26px; margin-bottom: 10px">
           Judul
         </h3>
@@ -1486,10 +1564,10 @@
         <div id="modal-badges" style="margin-bottom: 20px"></div>
 
         <div class="modal-links">
-          <a href="#" target="_blank" class="modal-btn" id="modal-github">
+          <a href="#" target="_blank" rel="noopener" class="modal-btn" id="modal-github">
             <i class="fa-brands fa-github"></i> <span data-i18n="source">Kode Sumber</span>
           </a>
-          <a href="#" target="_blank" class="modal-btn primary" id="modal-link">
+          <a href="#" target="_blank" rel="noopener" class="modal-btn primary" id="modal-link">
             <i class="fa-solid fa-link"></i> <span data-i18n="live">Lihat Website</span>
           </a>
         </div>
@@ -1891,6 +1969,7 @@
 
         // Memasukkan data ke dalam modal
         document.getElementById("modal-img").src = imgSrc;
+        document.getElementById("modal-img").alt = title;
         document.getElementById("modal-title").textContent = title;
         document.getElementById("modal-desc").textContent = desc;
 

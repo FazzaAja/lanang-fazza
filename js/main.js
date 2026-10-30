@@ -4,7 +4,7 @@
   const nameEl = document.getElementById("preloader-name");
   const barFill = document.getElementById("preloader-bar-fill");
   const MIN_DURATION = 1800; // Tampil minimal 1,8 detik agar animasi terlihat
-  const MAX_DURATION = 6000; // Batas aman jika ada file yang lama dimuat
+  const MAX_DURATION = 10000; // Batas aman agar website tetap terbuka jika koneksi sangat lambat
   const startTime = Date.now();
 
   // Pecah nama jadi per huruf agar muncul satu per satu
@@ -18,18 +18,62 @@
     )
     .join("");
 
-  // Progress bar bergerak perlahan sampai halaman selesai dimuat
-  let progress = 0;
-  const progressTimer = setInterval(() => {
-    progress = Math.min(progress + Math.random() * 12, 90);
-    barFill.style.width = progress + "%";
-  }, 180);
+  // Daftar hal yang harus siap sebelum website ditampilkan
+  const tasks = [];
+
+  // Semua gambar, termasuk gambar lazy di tab yang belum dibuka,
+  // diunduh dan di-decode dulu agar tidak muncul kosong saat ganti tab
+  const imageSources = new Set(
+    [...document.images].map((img) => img.getAttribute("src")).filter(Boolean),
+  );
+  imageSources.forEach((src) => {
+    tasks.push(
+      new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () =>
+          (img.decode ? img.decode() : Promise.resolve()).then(resolve, resolve);
+        img.onerror = resolve; // Gambar gagal tetap dihitung agar loading tidak macet
+        img.src = src;
+      }),
+    );
+  });
+
+  // Font teks dan ikon, termasuk ketebalan yang hanya dipakai di tab lain
+  if (document.fonts) {
+    [
+      "400 1em 'Plus Jakarta Sans'",
+      "500 1em 'Plus Jakarta Sans'",
+      "600 1em 'Plus Jakarta Sans'",
+      "400 1em 'Space Grotesk'",
+      "600 1em 'Space Grotesk'",
+      "700 1em 'Space Grotesk'",
+      "900 1em 'Font Awesome 6 Free'",
+      "400 1em 'Font Awesome 6 Brands'",
+    ].forEach((font) => tasks.push(document.fonts.load(font).catch(() => {})));
+  }
+
+  // Seluruh halaman (CSS, script, dan gambar non-lazy) selesai dimuat
+  tasks.push(
+    new Promise((resolve) => {
+      if (document.readyState === "complete") resolve();
+      else window.addEventListener("load", resolve, { once: true });
+    }),
+  );
+
+  // Progress bar mengikuti jumlah aset yang benar-benar sudah siap
+  let doneCount = 0;
+  barFill.style.width = "5%";
+  tasks.forEach((task) =>
+    task.then(() => {
+      doneCount++;
+      barFill.style.width = 5 + (doneCount / tasks.length) * 95 + "%";
+    }),
+  );
 
   let finished = false;
   function finishLoading() {
     if (finished) return;
     finished = true;
-    clearInterval(progressTimer);
     barFill.style.width = "100%";
 
     setTimeout(() => {
@@ -42,7 +86,8 @@
     setTimeout(() => preloader.remove(), 1700);
   }
 
-  window.addEventListener("load", () => {
+  // Tutup preloader hanya setelah semua aset siap (dan animasi sempat terlihat)
+  Promise.all(tasks).then(() => {
     const elapsed = Date.now() - startTime;
     setTimeout(finishLoading, Math.max(0, MIN_DURATION - elapsed));
   });

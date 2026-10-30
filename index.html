@@ -95,7 +95,12 @@
 
     <!-- Favicon: monogram LF emas -->
     <link rel="icon" type="image/svg+xml" href="images/icons/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/icons/favicon-32.png"
+    />
     <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png" />
     <meta name="theme-color" content="#0a0a0a" />
 
@@ -130,7 +135,8 @@
       class="floating-btn theme-toggle glass-panel"
       onclick="toggleTheme()"
       id="theme-btn"
-      aria-label="Toggle Theme"
+      aria-label="Ganti tema"
+      data-i18n-label="theme_label"
     >
       <i class="fa-solid fa-moon"></i>
     </button>
@@ -151,6 +157,7 @@
           <img
             src="images/person.webp"
             alt="Foto Lanang Fajri Ramadhan"
+            data-i18n-alt="photo_alt"
             class="profile-img"
             width="440"
             height="440"
@@ -365,6 +372,10 @@
                 >
                 <h4><span data-i18n="edu1_t">S1 Informatika - FTI</span></h4>
                 <p>Universitas Ahmad Dahlan, Yogyakarta</p>
+                <p class="resume-gpa">
+                  <i class="fa-solid fa-star"></i>
+                  <span data-i18n="edu1_gpa">IPK 3,8 / 4,0</span>
+                </p>
               </div>
               <div class="resume-item">
                 <span class="resume-date">2020 - 2023</span>
@@ -439,7 +450,7 @@
                   </div>
                   <span class="exp-date"
                     ><span data-i18n="exp2_date"
-                      >Nov 2024 — Sekarang</span
+                      >Nov 2024 — Jan 2027</span
                     ></span
                   >
                 </div>
@@ -823,22 +834,25 @@
       class="floating-btn back-to-top glass-panel"
       onclick="scrollToTop()"
       id="btt-btn"
+      aria-label="Kembali ke atas"
+      data-i18n-label="top_label"
     >
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <div class="modal-overlay" id="portfolio-modal">
       <div class="modal-content">
-        <button class="close-modal" onclick="closeModal()">
+        <button
+          class="close-modal"
+          onclick="closeModal()"
+          aria-label="Tutup"
+          data-i18n-label="close_label"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
         <img src="" alt="" id="modal-img" class="modal-img" />
-        <h3 id="modal-title" class="modal-title">
-          Judul
-        </h3>
-        <p id="modal-desc" class="modal-desc">
-          Deskripsi
-        </p>
+        <h3 id="modal-title" class="modal-title">Judul</h3>
+        <p id="modal-desc" class="modal-desc">Deskripsi</p>
         <div id="modal-badges" class="modal-badges"></div>
 
         <div class="modal-links">

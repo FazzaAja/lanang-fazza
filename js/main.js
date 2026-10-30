@@ -210,6 +210,7 @@ const translations = {
     h_ach: "Prestasi",
     edu1_date: "2023 - Sekarang",
     edu1_t: "S1 Informatika - FTI",
+    edu1_gpa: "IPK 3,8 / 4,0",
     edu2_t: "Rekayasa Perangkat Lunak",
     exp1_t: "Staff Bantu Bidang Program",
     onsite: "· Di Lokasi",
@@ -221,7 +222,7 @@ const translations = {
     exp1_p3:
       "Menyiapkan kebutuhan dan perlengkapan program untuk pelaksanaan di lapangan.",
     exp2_t: "Asisten Praktikum",
-    exp2_date: "Nov 2024 — Sekarang",
+    exp2_date: "Nov 2024 — Jan 2027",
     exp2_p1: "Menjelaskan materi praktikum kepada mahasiswa.",
     exp2_p2: "Mengolah data nilai praktikum menggunakan Excel.",
     exp3_date: "Agu 2022 — Jan 2023",
@@ -266,6 +267,10 @@ const translations = {
     nav_about: "Tentang",
     source: "Kode Sumber",
     live: "Lihat Website",
+    photo_alt: "Foto Lanang Fajri Ramadhan",
+    theme_label: "Ganti tema",
+    top_label: "Kembali ke atas",
+    close_label: "Tutup",
     w1_desc:
       "Website resmi klinik gigi Kusuma Dental Care di Yogyakarta yang menampilkan layanan, tim dokter, dan informasi klinik. Responsif di desktop maupun ponsel. Berperan sebagai Manajer Proyek.",
     w1_tools: "Manajemen Proyek, Pengembangan Web, Desain Responsif",
@@ -319,6 +324,7 @@ const translations = {
     h_ach: "Achievements",
     edu1_date: "2023 - Present",
     edu1_t: "Bachelor of Informatics - FTI",
+    edu1_gpa: "GPA 3.8 / 4.0",
     edu2_t: "Software Engineering",
     exp1_t: "Program Division Assistant Staff",
     onsite: "· On-site",
@@ -330,7 +336,7 @@ const translations = {
     exp1_p3:
       "Prepared program needs and equipment for field implementation.",
     exp2_t: "Practicum Assistant",
-    exp2_date: "Nov 2024 — Present",
+    exp2_date: "Nov 2024 — Jan 2027",
     exp2_p1: "Explained practicum material to students.",
     exp2_p2: "Processed practicum grade data using Excel.",
     exp3_date: "Aug 2022 — Jan 2023",
@@ -374,6 +380,10 @@ const translations = {
     nav_about: "About",
     source: "Source",
     live: "Live Preview",
+    photo_alt: "Photo of Lanang Fajri Ramadhan",
+    theme_label: "Toggle theme",
+    top_label: "Back to top",
+    close_label: "Close",
     w1_desc:
       "Official website of Kusuma Dental Care, a dental clinic in Yogyakarta, showcasing its services, doctors, and clinic information. Responsive on desktop and mobile. Role: Project Manager.",
     w1_tools: "Project Management, Web Development, Responsive Design",
@@ -416,6 +426,16 @@ function applyLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const text = dict[el.getAttribute("data-i18n")];
     if (text !== undefined) el.innerHTML = text;
+  });
+
+  // Ganti teks alt gambar dan label tombol (untuk pembaca layar)
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const text = dict[el.getAttribute("data-i18n-alt")];
+    if (text !== undefined) el.alt = text;
+  });
+  document.querySelectorAll("[data-i18n-label]").forEach((el) => {
+    const text = dict[el.getAttribute("data-i18n-label")];
+    if (text !== undefined) el.setAttribute("aria-label", text);
   });
 
   // Ganti data popup di kartu Works

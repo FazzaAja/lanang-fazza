@@ -426,6 +426,15 @@ h4,
   font-weight: 700;
   display: block;
 }
+.resume-item .resume-gpa {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.resume-gpa i {
+  margin-right: 4px;
+}
 
 /* Kartu Experience detail (judul, perusahaan, lokasi, tanggal, poin) */
 .exp-card {

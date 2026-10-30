@@ -216,6 +216,8 @@ const translations = {
     w4_sub: "Kartu Nama Digital",
     w5_title: "Sistem Izin SMKN 4 TSM",
     w5_sub: "Sistem Perizinan Sekolah",
+    w6_title: "Portofolio Pribadi",
+    w6_sub: "Website Portofolio",
     nav_about: "Tentang",
     source: "Kode Sumber",
     live: "Lihat Website",
@@ -230,6 +232,8 @@ const translations = {
       "Kartu profil digital untuk karyawan Antarestar. Admin/HRD dapat menambahkan data staf sebanyak yang dibutuhkan, dan setiap karyawan memiliki halaman profil dengan tombol telepon, simpan kontak (vCard), email, serta tautan media sosial.",
     w5_desc:
       "Sistem izin keluar-masuk siswa SMK Negeri 4 Tasikmalaya. Mencatat data murid, alasan izin, dan guru piket, dengan tampilan detail murid di ponsel serta ekspor data ke PDF dan Excel.",
+    w6_desc:
+      "Website portofolio pribadi ini: menampilkan profil, riwayat pendidikan dan pengalaman, serta karya. Dilengkapi mode gelap/terang, dua bahasa (Indonesia/Inggris), animasi pembuka, dan tampilan responsif di desktop maupun ponsel.",
   },
   en: {
     loc: "Location",
@@ -320,6 +324,8 @@ const translations = {
     w4_sub: "Digital Business Card",
     w5_title: "SMKN 4 TSM Permit System",
     w5_sub: "School Permit System",
+    w6_title: "Personal Portfolio",
+    w6_sub: "Portfolio Website",
     nav_about: "About",
     source: "Source",
     live: "Live Preview",
@@ -334,6 +340,8 @@ const translations = {
       "Digital profile cards for Antarestar employees. Admin/HR can add as many staff as needed, and each employee gets a profile page with call, save contact (vCard), email, and social media buttons.",
     w5_desc:
       "Student exit/entry permit system for SMK Negeri 4 Tasikmalaya. Records student data, permit reasons, and duty teachers, with a mobile student detail view and PDF/Excel data export.",
+    w6_desc:
+      "This personal portfolio website: showcases my profile, education and experience history, and works. Features dark/light mode, two languages (Indonesian/English), an intro animation, and a responsive layout on desktop and mobile.",
   },
 };
 
